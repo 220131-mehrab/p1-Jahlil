@@ -2,7 +2,7 @@
 
 ## Details
 
-I am building a Digimon http application
+I am building a Digimon http application w/PostgreSQL database usage.
 
 ## User Stories
 

@@ -13,3 +13,9 @@ I am building a Digimon http application w/PostgreSQL database usage
 
 I have decided to move this project to Spring because I had multiple issues with Java/Tomcat/JDBC.
 I had to digress on my prior issues to advance.
+
+## Features
+
+- Spring Web
+- Spring JPA
+- PostgreSQL

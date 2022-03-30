@@ -5,35 +5,39 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.SequenceGenerator;
 
-@Entity
-@Table(name = "digimon")
+@Entity(name = "Digimon")
 public class Digimon {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
-    String name;
-    public Digimon(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-    @Column(name = "id", nullable = false)
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-    @Column(name = "name", nullable = false)
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
+    @SequenceGenerator(
+        name = "digimon_sequence",
+        sequenceName = "digimon_sequence",
+        allocationSize = 1
+    )
+    @GeneratedValue(
+        strategy = GenerationType.SEQUENCE,
+        generator = "digimon_sequence"
+    )
+    @Column(
+        name = "id",
+        updatable = false
+    )
+    private Long digimonId;
+    @Column(
+        name = "digimon_name",
+        nullable = false,
+        columnDefinition = "TEXT"
+    )
+    private String digimonName;
+
+    public Digimon(Long digimonId, String digimonName) {
+        this.digimonId = digimonId;
+        this.digimonName = digimonName;
     }
     @Override
     public String toString() {
-        return "Digimon [id=" + id + ", name=" + name + "]";
+        return "Digimon [digimonId=" + digimonId + ", digimonName=" + digimonName + "]";
     }
 }

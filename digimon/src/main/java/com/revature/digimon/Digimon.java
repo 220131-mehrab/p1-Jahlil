@@ -32,8 +32,7 @@ public class Digimon {
     )
     private String digimonName;
 
-    public Digimon(Long digimonId, String digimonName) {
-        this.digimonId = digimonId;
+    public Digimon(String digimonName) {
         this.digimonName = digimonName;
     }
     @Override

@@ -9,3 +9,4 @@ March 30th, 2022
 ```
 - Postgres Driver is successfully connected and database is built
 - Next is the Web version of the project
+- Query set up is complete
